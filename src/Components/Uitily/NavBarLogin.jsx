@@ -3,15 +3,16 @@ import { Container, FormControl, Nav, Navbar } from "react-bootstrap";
 import logo from "../../images/logo.png";
 import login from "../../images/login.png";
 import cart from "../../images/cart.png";
+import { Link } from "react-router-dom";
 
 const NavBarLogin = () => {
   return (
     <Navbar className="sticky-top" bg="dark" variant="dark" expand="sm">
       <Container>
         <Navbar.Brand>
-          <a href="/">
+          <Link to="/">
             <img src={logo} className="logo" alt="logo" />
-          </a>
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -22,20 +23,23 @@ const NavBarLogin = () => {
             aria-label="Search"
           />
           <Nav className="me-auto">
-            <Nav.Link
-              href="/login"
-              className="nav-text d-flex mt-3 justify-content-center"
-            >
-              <img src={login} className="login-img" alt="login" />
-              <p style={{ color: "white" }}>دخول</p>
+            <Nav.Link>
+              <Link
+                to="/login"
+                className="nav-text d-flex mt-3 justify-content-center text-decoration-none"
+              >
+                <img src={login} className="login-img" alt="login" />
+                <p style={{ color: "white" }}>دخول</p>
+              </Link>
             </Nav.Link>
-            <Nav.Link
-              href="/cart"
-              className="nav-text d-flex mt-3 justify-content-center"
-              style={{ color: "white" }}
-            >
-              <img src={cart} className="login-img" alt="cart" />
-              <p style={{ color: "white" }}>العربه</p>
+            <Nav.Link style={{ color: "white" }}>
+              <Link
+                to="/cart"
+                className="nav-text d-flex mt-3 justify-content-center text-decoration-none"
+              >
+                <img src={cart} className="login-img" alt="cart" />
+                <p style={{ color: "white" }}>العربه</p>
+              </Link>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
